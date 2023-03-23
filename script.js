@@ -1,3 +1,6 @@
+import { BadWords } from 'bad-words';
+const filter = new BadWords();
+
 // PS! Replace this with your own channel ID
 // If you use this channel ID your app will stop working in the future
 const password = prompt("Enter the password to access the learning website:");
@@ -13,7 +16,7 @@ const drone = new ScaleDrone(CLIENT_ID, {
 });
 
 let members = [];
-
+  
 drone.on('open', error => {
   if (error) {
     return console.error(error);
@@ -79,9 +82,12 @@ const DOM = {
 DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
-  const value = DOM.input.value;
+  var value = DOM.input.value;
   if (value === '') {
     return;
+  }
+  if (filter.isProfane(value)) {
+    value = 'Message contains blocked content. Try again.'
   }
   DOM.input.value = '';
   drone.publish({
@@ -123,6 +129,8 @@ function addMessageToListDOM(text, member) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
   }
 }
+  
+  
   
 } else {
   // Password is incorrect, show an alert and close the webpage

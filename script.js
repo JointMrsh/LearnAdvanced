@@ -86,13 +86,10 @@ function sendMessage() {
   if (value === '') {
     return;
   }
-  if (filter.isProfane(value)) {
-    value = 'Message contains blocked content. Try again.'
-  }
   DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
-    message: value,
+    message: filter.clean(value),
   });
 }
 

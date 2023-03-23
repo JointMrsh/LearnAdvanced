@@ -1,0 +1,67 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #111;
+  color: #fff;
+}
+
+.members-count,
+.members-list,
+.messages {
+  border: 1px solid #444;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #222;
+}
+
+.messages {
+  flex-shrink: 1;
+  overflow: auto;
+}
+
+.message {
+  padding: 5px 0;
+}
+
+.message .member {
+  display: inline-block;
+}
+
+.member {
+  padding-right: 10px;
+  position: relative;
+}
+
+.message-form {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.message-form__input {
+  flex-grow: 1;
+  border: 1px solid #333;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #222;
+  color: #fff;
+}
+
+.message-form__button {
+  margin: 10px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* Hover styles */
+.message-form__button:hover {
+  background-color: #fff;
+  color: #444;
+}

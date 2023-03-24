@@ -1,15 +1,15 @@
 body {
-  background: linear-gradient(to right, #111, #333, #111);
+  background: linear-gradient(to right, #06090f, #161b29, #06090f);
   background-size: 200% 100%;
-  animation: wave 2s infinite alternate;
+  animation: wave 1s infinite alternate;
 }
 
 @keyframes wave {
   from {
-    transform: translate3d(-10px, 0, 0);
+    background-position: 0 0;
   }
   to {
-    transform: translate3d(10px, 0, 0);
+    background-position: 100% 0;
   }
 }
 

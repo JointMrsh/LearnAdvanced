@@ -1,7 +1,6 @@
 // PS! Replace this with your own channel ID
 // If you use this channel ID your app will stop working in the future
 const password = prompt("Enter the password to access the learning website:");
-import { BadWords } from 'bad-words';
 
 if (password === "WMS_PRO_ACCESS23") {
   const CLIENT_ID = 'QRZjF1j3t9Vu0atP';

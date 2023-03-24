@@ -1,17 +1,18 @@
 body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 13px;
-  display: flex;
-  flex-direction: column;
-  max-height: 100vh;
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #111;
-  color: #fff;
-  animation: bg-animation 20s infinite;
-  background-image: linear-gradient(45deg, #000, #111, #000);
-  background-size: 400% 400%;
+  background: linear-gradient(to right, #111, #333, #111);
+  background-size: 200% 100%;
+  animation: wave 2s infinite alternate;
 }
+
+@keyframes wave {
+  from {
+    transform: translate3d(-10px, 0, 0);
+  }
+  to {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
 
 .members-count,
 .members-list,
@@ -67,16 +68,4 @@ body {
 .message-form__button:hover {
   background-color: #fff;
   color: #444;
-}
-
-@keyframes bg-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
